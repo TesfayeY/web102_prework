@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
+:root {
+    --font-family: 'Cabin', sans-serif;
+    --color-primary: #4A90E2; /* A vibrant blue */
+    --color-secondary: #50E3C2; /* A complementary teal */
+    --color-background:#e9f4f7; /* Light background for better contrast */
+    --color-header: #b0b8b9; /* White header for contrast */
+    --color-card: #FFFFFF;
+    --color-card-bg: #A8B0BC;
+    --color-hover: rgba(74, 144, 226, 0.2);
+    --color-text: #333333;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    
+
+}
+
+#tentacles {
+    width: 50px;
+}
+
+.header {
+    display: flex;
+    background-color: #dceced8f;
+    padding: 1%;
+    align-items: center;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -10px;
+    
+    padding: 1rem 2%;
+    box-shadow: 0 2px 4px var(--color-shadow);
+}
+.header nav a:hover {
+    color: var(--color-secondary);
+}
+h2 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+p{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.header nav a {
+    margin-left: 1.5rem;
+    color: var(--color-header);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-speed);
+}
+
+
+.stats-container {
+    display: flex;
+    align-items: center; /* or 'flex-start', 'stretch', etc. as needed */
+    justify-content: center; /* optional if you also want horizontal centering */
+}
+.stats-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0 30px var(--color-primary);
+    transition: box-shadow var(--transition-speed);
+    
+    box-shadow: 0 0 30px rgb(62, 75, 79);
+}
+#description-container p,
+#button-container p {
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.stats-card {
+    background-color: #a8b0bc;
+    border-radius: 7px;
+    padding: 1%;
+    margin: 1%;
+    width: 100%;
+    text-align: center;
+    flex: 1 1 200px;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+#num-contributions, #total-raised, #num-games {
+    font-size: 50px;
+}
+
+#games-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    
+    
+}
+
+.game-img {
+    
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+        margin-bottom: 1rem;
+    
+    box-shadow: 0 0 10px #FFFFFF;
+}
+
+.game-card {
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--color-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px lightblue;
+}
+.game-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.game-card p {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    text-align: center;
+}
+
+#button-container {
+    text-align: center;
+    padding: 2rem;
+}
+
+button {
+   
+        font-family: var(--font-family);
+        background-color: var(--color-primary);
+        color: var(--color-header);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        margin: 0.5rem;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+button:hover {
+    background-color:#d1cece;
+    transform: scale(1.05);
+}
+button:focus {
+    outline: 2px dashed #c5a8a8;
+    outline-offset: 4px;
+}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header nav {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header nav a {
+        margin: 0.5rem 0;
+    }
+
+    .stats-container {
+        padding: 1rem;
+    }
+
+    #games-container {
+        grid-template-columns: 1fr;
+    }
+}
